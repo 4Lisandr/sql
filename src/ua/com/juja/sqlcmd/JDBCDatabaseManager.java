@@ -111,7 +111,7 @@ public class JDBCDatabaseManager implements DatabaseManager {
                     "jdbc:postgresql://localhost:5432/" + database, user,
                     password);
         } catch (SQLException e) {
-            System.out.println(String.format("Cant get connection for database:%s user:%s", database, user));
+            System.out.println(String.format("Cant get connection for model:%s user:%s", database, user));
             e.printStackTrace();
             connection = null;
         }

@@ -15,7 +15,8 @@ public class JDBCDatabaseManagerTest {
 
     @Before
     public void setup() {
-        manager = new JDBCDatabaseManager();
+//        manager = new JDBCDatabaseManager();
+        manager = new InMemoryDatabaseManager();
         manager.connect("sqlcmd", "postgres", "HcxbPRi5EoNB");
     }
 
