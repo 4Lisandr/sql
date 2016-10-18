@@ -7,10 +7,10 @@ import java.util.Random;
  */
 public class Main {
     public static void main(String[] argv) throws ClassNotFoundException, SQLException {
-        Class.forName("org.postgresql.Driver");
+//        Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(
                     "jdbc:postgresql://localhost:5432/sqlcmd", "postgres",
-                    "postgres");
+                    "HcxbPRi5EoNB");
 
         // insert
         Statement stmt = connection.createStatement();
@@ -20,7 +20,7 @@ public class Main {
 
         // select
         stmt = connection.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM public.user WHERE id > 10");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM public.user WHERE id > 1");
         while (rs.next()) {
             System.out.println("id:" + rs.getString("id"));
             System.out.println("name:" + rs.getString("name"));
@@ -42,7 +42,7 @@ public class Main {
         // delete
         stmt = connection.createStatement();
         stmt.executeUpdate("DELETE FROM public.user " +
-                "WHERE id > 10 AND id < 100");
+                "WHERE id > 20 AND id < 100");
         stmt.close();
 
         // update

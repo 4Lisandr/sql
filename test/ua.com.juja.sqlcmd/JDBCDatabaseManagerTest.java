@@ -9,14 +9,14 @@ import static org.junit.Assert.assertEquals;
 /**
  * new commit
  */
-public class DatabaseManagerTest {
+public class JDBCDatabaseManagerTest {
 
     private DatabaseManager manager;
 
     @Before
     public void setup() {
-        manager = new DatabaseManager();
-        manager.connect("sqlcmd", "postgres", "postgres");
+        manager = new JDBCDatabaseManager();
+        manager.connect("sqlcmd", "postgres", "HcxbPRi5EoNB");
     }
 
     @Test
